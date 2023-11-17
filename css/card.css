@@ -1,5 +1,6 @@
 .card_form{
   display: flex;
+  position: relative;
   flex-direction: column;
   border: 1px solid black;
   text-align: center;
@@ -23,7 +24,17 @@
   }
 }
 #submit_button{
-  margin: auto;
+margin: auto;
+}
+#forget_tag{
+  text-align: right;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+  background-clip: text;
+  -webkit-background-clip: text;
+    & :hover{
+       color: transparent;
+        transition: 500ms ease;
+    }
 }
 
 
