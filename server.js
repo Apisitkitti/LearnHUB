@@ -57,15 +57,15 @@ const queryDB = (sql) => {
 }
 
 app.post('/regisDB', async(req,res) => {
-    let now_date = new Date().toISOString().slince(0,19).replace('T','');
+    let now_date = new Date().toISOString().slice(0, 19).replace('T', ' ');
     let sql = "CREATE TABLE IF NOT EXISTS userInfo (id INT AUTO_INCREMENT PRIMARY KEY, User_Date TIMESTAMP, User_Name VARCHAR(300), User_Email VARCHAR(300), User_Username VARCHAR(300), User_Password VARCHAR(300))";
     let result = await queryDB(sql);
     sql = `INSERT INTO userInfo (User_Date, User_Name, User_Email, User_Username, User_Password) VALUES ("${now_date}","${req.body.name}","${req.body.email}","${req.body.username}", "${req.body.password}")`;
     result = await queryDB(sql);
-    return redirect('/html/login.html');
+    return res.redirect('html/login.html');
 })
 
-app.post('/ChecKLogin',async (req,res) => {
+app.post('/CheckLogin',async (req,res) => {
     let sql = `Select User_Username, User_Password from userInfo`;
     let result = await queryDB(sql);
     result = Object.assign({}, result);
@@ -80,14 +80,14 @@ app.post('/ChecKLogin',async (req,res) => {
             var check = true;
             res.cookie("username", result[keys[counter]].User_Username);
             res.cookie("password", result[keys[counter]].User_Password);
-            return res.redirect('/html/index.html');
+            return res.redirect('html/index.html');
         }
     }
     
-    if(chect == false)
+    if(check == false)
     {
         check = false;
-        return res.redirect('login.html?error = 1');
+        return res.redirect('html/login.html?error = 1');
     }
 
 })
