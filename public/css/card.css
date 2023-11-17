@@ -28,16 +28,11 @@ margin: auto;
 }
 #forget_tag{
   text-align: right;
-  background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
-  background-clip: text;
-  -webkit-background-clip: text;
-    
     & :hover{
-       color: transparent;
+       color: blue;
         transition: 500ms ease;
     }
 }
-
 #errordisplay{
   color: red;
 }

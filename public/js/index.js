@@ -13,5 +13,9 @@ function getCookie(name){
   }catch(err){
     return false; 
   }
+}
 
+function pageLoad(){
+  var username =getCookie('username')
+  document.getElementById('username').innerHTML = username
 }
