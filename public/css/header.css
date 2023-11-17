@@ -1,7 +1,7 @@
 .header_container{
   display: flex;
   font-size: 1.5rem;
-  justify-content:space-around;
+  justify-content:space-between;
   height: 4rem;
   align-items: center;
   position:fixed;
@@ -13,13 +13,13 @@
 
 #logo_box{
   display: flex;
-  justify-content: center;
+  padding-left: 1rem;
 }
 
 .nav_box{
   display: flex;
-  justify-content: space-around;
-  
+  justify-content: space-between;
+  list-style: none;
     & a{
       padding: 3rem ;
     }
@@ -50,5 +50,11 @@
   padding: 10px 20px;
   margin-left: 1rem;
   
+}
+
+@media only screen and (max-width: 930px){
+  .nav_box,.register_login_container {
+    display: none;
+  }
 }
 
