@@ -90,3 +90,13 @@ app.post('/ChecKLogin',async (req,res) => {
     }
 
 })
+
+app.post("/UpdateDB", async (req,res) => {
+    let sql = `UPDATE userInfo SET User_Password = '${req.body.password}' WHERE User_Username = '${req.body.username}'`;
+    let result = await queryDB(sql);
+    res.end("Update Password Success"); 
+})
+
+app.listen(port , hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/index.html`);
+})
