@@ -31,11 +31,13 @@ margin: auto;
   background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
   background-clip: text;
   -webkit-background-clip: text;
+    
     & :hover{
        color: transparent;
         transition: 500ms ease;
     }
 }
+
 #errordisplay{
   color: red;
 }

@@ -62,7 +62,7 @@ app.post('/regisDB', async(req,res) => {
     let result = await queryDB(sql);
     sql = `INSERT INTO userInfo (User_Date, User_Name, User_Email, User_Username, User_Password) VALUES ("${now_date}","${req.body.name}","${req.body.email}","${req.body.username}", "${req.body.password}")`;
     result = await queryDB(sql);
-    return resdirect('Login.html');
+    return redirect('/html/login.html');
 })
 
 app.post('/ChecKLogin',async (req,res) => {
@@ -80,7 +80,7 @@ app.post('/ChecKLogin',async (req,res) => {
             var check = true;
             res.cookie("username", result[keys[counter]].User_Username);
             res.cookie("password", result[keys[counter]].User_Password);
-            return res.redirect('....');
+            return res.redirect('/html/index.html');
         }
     }
     
