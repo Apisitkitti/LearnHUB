@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const hostname = 'localhost';
-const port = 3000;
+const port = 3001;
 const bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 const multer = require('multer');
@@ -11,7 +11,8 @@ const mysql = require('mysql');
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extened: false}));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
 
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
@@ -98,5 +99,5 @@ app.post("/UpdateDB", async (req,res) => {
 })
 
 app.listen(port , hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/index.html`);
+    console.log(`Server running at   http://${hostname}:${port}/html/index.html`);
 })
