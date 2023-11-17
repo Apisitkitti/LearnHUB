@@ -36,5 +36,8 @@ margin: auto;
         transition: 500ms ease;
     }
 }
+#errordisplay{
+  color: red;
+}
 
 
