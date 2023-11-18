@@ -92,10 +92,26 @@ app.post('/CheckLogin',async (req,res) => {
 
 })
 
-app.post("/UpdateDB", async (req,res) => {
+app.post('/UpdateDB', async (req,res) => {
+  let sql = `Select User_Username from userInfo`;
+  let result = await queryDB(sql);
+  result = Object.assign({}, result);
+  var keys = Object.keys(result);
+  var check = false;
+  for(var information_num =0; information_num<keys.length; information_num++){
+  if(req.body.username == result[keys[information_num]].User_Username)
+  {
     let sql = `UPDATE userInfo SET User_Password = '${req.body.password}' WHERE User_Username = '${req.body.username}'`;
     let result = await queryDB(sql);
-    res.redirect('html/login.html');
+    check = true;
+    return res.redirect('html/login.html');
+  }
+  }
+  if(check == false)
+  {
+      check = false;
+        return res.redirect('html/forget.html?error = 1');
+  } 
 })
 
 app.listen(port , hostname, () => {

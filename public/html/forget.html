@@ -6,16 +6,19 @@
     <title>LearningHUB</title>
     <link rel="stylesheet" href="/css/setup.css">
     <link rel="stylesheet" href="/css/card.css">
+    
   </head>
   <body>
     <fieldset>
     <div class="card_form"> 
+      <form action="/UpdateDB" method="post" accept-charset="utf-8">
       <h1>Forgot Password</h1>
       <p>Username: <input type="text" id="inside_input" name="username" value="" placeholder="username" required/></p>
       <p>Password: <input type="text" id="inside_input" name="password" value="" placeholder="password" required/></p>
       <p>Confirm Password: <input type="text" id="inside_input" value="" name="confirm_password"  required/></p>
       <span id="errordisplay"></span><br>
-      <input type="submit" name="submit" value="Reset Password" id="submit_button">  
+      <input type="submit" name="submit" value="Reset Password" id="submit_button">
+    </form>  
     </div>
     </fieldset>
   </body>
