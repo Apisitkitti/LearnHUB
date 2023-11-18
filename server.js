@@ -57,15 +57,24 @@ const queryDB = (sql) => {
 }
 
 app.post('/regisDB', async(req,res) => {
-    if(req.body.password == req.body.confirm_password){
-      let now_date = new Date().toISOString().slice(0, 19).replace('T', ' ');
-      let sql = "CREATE TABLE IF NOT EXISTS userInfo (id INT AUTO_INCREMENT PRIMARY KEY, User_Date TIMESTAMP, User_Name VARCHAR(300), User_Email VARCHAR(300), User_Username VARCHAR(300), User_Password VARCHAR(300))";
-      let result = await queryDB(sql);
-      sql = `INSERT INTO userInfo (User_Date, User_Name, User_Email, User_Username, User_Password) VALUES ("${now_date}","${req.body.name}","${req.body.email}","${req.body.username}", "${req.body.password}")`;
-      result = await queryDB(sql);
-      return res.redirect('html/login.html');
+    let sql = `Select User_Username from userInfo`;
+    let result = await queryDB(sql)
+    result = Object.assign({},result);
+    var keys = Object.keys(result);
+    var check = false;
+    for(var user_num = 0; user_num<keys.length; user_num++)
+    {
+      if(req.body.password == req.body.confirm_password && req.body.username !== result[keys[user_num]].User_Username){
+        let now_date = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        let sql = "CREATE TABLE IF NOT EXISTS userInfo (id INT AUTO_INCREMENT PRIMARY KEY, User_Date TIMESTAMP, User_Name VARCHAR(300), User_Email VARCHAR(300), User_Username VARCHAR(300), User_Password VARCHAR(300))";
+        let result = await queryDB(sql);
+        sql = `INSERT INTO userInfo (User_Date, User_Name, User_Email, User_Username, User_Password) VALUES ("${now_date}","${req.body.name}","${req.body.email}","${req.body.username}", "${req.body.password}")`;
+        result = await queryDB(sql);
+        check = true;
+        return res.redirect('html/login.html');    
+      }
     }
-    else
+    if(check == false)
     {
       return res.redirect('html/register.html?error = 1');
     }
