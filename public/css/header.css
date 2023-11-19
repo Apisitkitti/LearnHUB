@@ -13,7 +13,7 @@
 
 #logo_box{
   display: flex;
-  padding-left: 1rem;
+  padding-left: 2rem;
 }
 
 .nav_box{
@@ -49,13 +49,20 @@
   border-radius: 5rem;
   padding: 10px 20px;
   margin-left: 1rem;
-  margin-right: 1rem;
+  margin-right: 2rem;
   
 }
-
+.mobile-toggler
+{
+  display: none;
+}
 @media only screen and (max-width: 930px){
   .nav_box,.register_login_container {
     display: none;
+  }
+  .mobile-toggler{
+    display:block;
+    margin-right: 2rem;
   }
 }
 
