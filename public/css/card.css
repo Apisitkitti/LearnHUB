@@ -11,6 +11,7 @@
   padding: 20px 20px;
   border-radius: 20px;
   box-shadow: 0px 0px 5px gray;
+  border: none;
 
   & h1 {
     margin-bottom: 20px;

@@ -8,7 +8,6 @@
   top: 0;
   width: 100vw;
   box-shadow: 0px 0px 25px rgb(119, 119, 119);
-
 }
 
 #logo_box {
@@ -55,22 +54,28 @@
   padding: 10px 20px;
   margin-left: 1rem;
   margin-right: 2rem;
-
 }
 
-.mobile-toggler {
+.hamburger {
   display: none;
 }
 
-@media only screen and (max-width: 930px) {
+@media only screen and (max-width: 980px) {
 
   .nav_box,
   .register_login_container {
     display: none;
   }
 
-  .mobile-toggler {
+  .hamburger {
     display: block;
     margin-right: 2rem;
+
+      & :hover{
+        background-color: rgb(220, 217, 217);
+        border-radius: 50px;
+        padding: 1px;
+        margin-right: -0.1rem;
+      }
   }
 }
