@@ -1,68 +1,76 @@
-.header_container{
+.header_container {
   display: flex;
   font-size: 1.5rem;
-  justify-content:space-between;
+  justify-content: space-between;
   height: 4rem;
   align-items: center;
-  position:fixed;
+  position: fixed;
   top: 0;
   width: 100vw;
   box-shadow: 0px 0px 25px rgb(119, 119, 119);
-  
+
 }
 
-#logo_box{
+#logo_box {
   display: flex;
   padding-left: 2rem;
 }
 
-.nav_box{
+.nav_box {
   display: flex;
   justify-content: space-between;
   list-style: none;
-    & a{
-      padding: 3rem ;
-    }
 
-    & a:hover{
-      text-decoration: underline;
-    }
-    & a:visited{
-      color: inherit;
-    }
+  & a {
+    padding: 3rem;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+
+  & a:visited {
+    color: inherit;
+  }
 }
-.register_login_container{
+
+.register_login_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-      & a{
-        text-decoration: none;
-      }
-      & a:visited{
-        color: inherit;
-      }
+  & a {
+    text-decoration: none;
+  }
+
+  & a:visited {
+    color: inherit;
+  }
 }
-#register_button{
+
+#register_button {
   background-color: black;
-  color:white;
+  color: white;
   border-radius: 5rem;
   padding: 10px 20px;
   margin-left: 1rem;
   margin-right: 2rem;
-  
+
 }
-.mobile-toggler
-{
+
+.mobile-toggler {
   display: none;
 }
-@media only screen and (max-width: 930px){
-  .nav_box,.register_login_container {
+
+@media only screen and (max-width: 930px) {
+
+  .nav_box,
+  .register_login_container {
     display: none;
   }
-  .mobile-toggler{
-    display:block;
+
+  .mobile-toggler {
+    display: block;
     margin-right: 2rem;
   }
 }
-

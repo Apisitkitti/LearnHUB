@@ -1,4 +1,4 @@
-.card_form{
+.card_form {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -11,30 +11,46 @@
   padding: 20px 20px;
   border-radius: 20px;
   box-shadow: 0px 0px 5px gray;
- 
-  & h1{
+
+  & h1 {
     margin-bottom: 20px;
   }
- 
-  & input{
+
+  & input {
     border-radius: 10px;
     padding: 5px 10px;
     margin: 5px 10px;
 
   }
 }
-#submit_button{
-margin: auto;
+
+#submit_button {
+  margin: auto;
 }
-#forget_tag{
+
+#forget_tag {
   text-align: right;
-    & :hover{
-       color: blue;
-        transition: 500ms ease;
-    }
+
+  & :hover {
+    color: blue;
+    transition: 500ms ease;
+  }
 }
-#errordisplay{
+
+#errordisplay {
   color: red;
 }
 
 
+.already-tag {
+  text-align: left;
+  margin-left: 1rem;
+}
+
+#login-link {
+  color: blue;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

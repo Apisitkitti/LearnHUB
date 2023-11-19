@@ -1,21 +1,21 @@
-function checkCookie(){
+function checkCookie() {
   var username = "";
-  if(getCookie("username" == false)){
+  if (getCookie("username" == false)) {
     window.location = "login.html";
   }
 }
 
-function getCookie(name){
+function getCookie(name) {
   var value = "";
-  try{
+  try {
     value - document.cookie.split("; ").find(row => row.startsWith(name)).split('=')[1]
     return value
-  }catch(err){
-    return false; 
+  } catch (err) {
+    return false;
   }
 }
 
-function pageLoad(){
-  var username =getCookie('username')
+function pageLoad() {
+  var username = getCookie('username')
   document.getElementById('username').innerHTML = username
 }
