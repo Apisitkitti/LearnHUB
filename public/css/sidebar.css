@@ -1,0 +1,19 @@
+.side_container{
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  position: fixed;
+  width: 280px;
+  height: 100vh;
+
+    & a{
+      color: white;
+      margin-bottom: 10px;
+      border: 1px solid white;
+      padding: 5px;
+    }
+}
+.close_sidebar_button{
+ text-align: right;
+ margin-right: 10px;
+}
