@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser');
 const multer = require('multer');
 const path = require('path');
 const mysql = require('mysql');
+const { count } = require('console');
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -64,7 +65,6 @@ app.post('/regisDB', async (req, res) => {
   result = Object.assign({}, result);
   var keys = Object.keys(result);
   var check = false;
-  
     if (req.body.password == req.body.confirm_password) {
       let now_date = new Date().toISOString().slice(0, 19).replace('T', ' ');
       sql = `INSERT INTO userInfo (User_Date, User_Name, User_Email, User_Username, User_Password) VALUES ("${now_date}","${req.body.name}","${req.body.email}","${req.body.username}", "${req.body.password}")`;
@@ -72,10 +72,6 @@ app.post('/regisDB', async (req, res) => {
       check = true;
       return res.redirect('html/login.html');
     }
-  
-  // if (check == false) {
-  //   return res.redirect('html/register.html?error = 1');
-  // }
 })
 
 app.post('/CheckLogin', async (req, res) => {

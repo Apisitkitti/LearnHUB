@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/css/setup.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="/css/sidebar.css">
+  <script src="/js/function.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -28,7 +29,7 @@
       <a href="/html/register.html" id="register_button">Register</a>
     </div>
     <!-- Button trigger modal -->
-    <div class="hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-expanded="false" aria-controls="collapseExample">
+    <div class="hamburger" onclick="openNav()">
         <i class="bi bi-list"></i>
     </div>
   </div>
@@ -36,7 +37,7 @@
 
   <aside>
     <div class="side_container" id="sidebar">
-      <a href="" class="close_sidebar_button" onclick="closeSidebar()">x</a>
+      <a href="" id="close_sidebar_button" onclick="closeSidebar()">x</a>
       <a href="#">My courses</a>
       <a href="#">Contact</a>
       <a href="/html/login.html">Login</a>

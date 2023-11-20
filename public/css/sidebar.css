@@ -1,19 +1,26 @@
-.side_container{
+.side_container {
   display: flex;
   flex-direction: column;
-  background-color: black;
+  height: 100%;
+  width: 0;
   position: fixed;
-  width: 280px;
-  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
 
-    & a{
-      color: white;
-      margin-bottom: 10px;
-      border: 1px solid white;
-      padding: 5px;
-    }
+  & a {
+    color: white;
+    margin-bottom: 10px;
+    border: 1px solid white;
+    padding: 5px;
+    margin-left: 10px;
+  }
 }
-.close_sidebar_button{
- text-align: right;
- margin-right: 10px;
+
+#close_sidebar_button {
+  text-align: right;
+  margin-right: 10px;
+  background-color: black;
 }
