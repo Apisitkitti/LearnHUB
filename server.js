@@ -123,6 +123,14 @@ app.post('/UpdateDB', async (req, res) => {
   }
 })
 
+app.post('/AddSubject', async (req,res) =>{
+  let sql = "CREATE TABLE IF NOT EXITS SubjectInfo (Subj_Code INT(10) PRIMARY KEY, Subj_Name VARCHAR(300), User_Name VARCHAR(300))";
+  let result = await queryDB(sql);
+  result = Object.assign({}, result);
+  sql = `INSERT INTO SubjectInfo (Subj_Code, User_Name) VALES ("${req.body.subjectcode}","${req.body.name}"})`;
+  result = await queryDB(sql);
+})
+
 app.listen(port, hostname, () => {
   console.log(`Server running at   http://${hostname}:${port}/html/index.html`);
 })
