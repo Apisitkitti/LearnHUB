@@ -67,32 +67,29 @@ app.post('/regisDB', async (req, res) => {
   var keys = Object.keys(result);
   var check = false;
 
-    if (req.body.password == req.body.confirm_password && checkRegister == false) {
-      let now_date = new Date().toISOString().slice(0, 19).replace('T', ' ');
-      sql = `INSERT INTO userInfo (User_Date, User_Name, User_Email, User_Username, User_Password) VALUES ("${now_date}","${req.body.name}","${req.body.email}","${req.body.username}", "${req.body.password}")`;
-      result = await queryDB(sql);
-      check = true;
-      checkRegister = true;
-      return res.redirect('html/login.html');
-    }
+  if (req.body.password == req.body.confirm_password && checkRegister == false) {
+    let now_date = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    sql = `INSERT INTO userInfo (User_Date, User_Name, User_Email, User_Username, User_Password) VALUES ("${now_date}","${req.body.name}","${req.body.email}","${req.body.username}", "${req.body.password}")`;
+    result = await queryDB(sql);
+    check = true;
+    checkRegister = true;
+    return res.redirect('html/login.html');
+  }
 
-    if(checkRegister == true)
-    {
-      for(var user_num = 0; user_num < keys.length; user_num++)
-      {
-        if(req.body.password == req.body.confirm_password && req.body.username !== result[keys[user_num]].User_Username)
-        {
-          let now_date = new Date().toISOString().slice(0, 19).replace('T', ' ');
-          sql = `INSERT INTO userInfo (User_Date, User_Name, User_Email, User_Username, User_Password) VALUES ("${now_date}","${req.body.name}","${req.body.email}","${req.body.username}", "${req.body.password}")`;
-          result = await queryDB(sql);
-          check = true;
-          return res.redirect('html/login.html');
-        }
+  if (checkRegister == true) {
+    for (var user_num = 0; user_num < keys.length; user_num++) {
+      if (req.body.password == req.body.confirm_password && req.body.username !== result[keys[user_num]].User_Username) {
+        let now_date = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        sql = `INSERT INTO userInfo (User_Date, User_Name, User_Email, User_Username, User_Password) VALUES ("${now_date}","${req.body.name}","${req.body.email}","${req.body.username}", "${req.body.password}")`;
+        result = await queryDB(sql);
+        check = true;
+        return res.redirect('html/login.html');
       }
     }
-    if (check == false) {
-      return res.redirect('html/register.html?error = 1');
-    }
+  }
+  if (check == false) {
+    return res.redirect('html/register.html?error=1');
+  }
 
 })
 
@@ -111,18 +108,20 @@ app.post('/CheckLogin', async (req, res) => {
       var check = true;
       res.cookie("username", result[keys[counter]].User_Username);
       res.cookie("password", result[keys[counter]].User_Password);
-      return res.rediret('html/index.html');
+      return res.redirect('html/index.html');
     }
   }
   if (check == false) {
     check = false;
-    return res.redirect('html/login.html?error = 1');
+    return res.redirect('html/login.html?error=2');
   }
 })
 
 app.post('/UpdateDB', async (req, res) => {
-  let sql = `Select User_Username from userInfo`;
+  let sql = "CREATE TABLE IF NOT EXISTS userInfo (id INT AUTO_INCREMENT PRIMARY KEY, User_Date TIMESTAMP, User_Name VARCHAR(300), User_Email VARCHAR(300), User_Username VARCHAR(300), User_Password VARCHAR(300))";
   let result = await queryDB(sql);
+  sql = `Select User_Username from userInfo`;
+  result = await queryDB(sql);
   result = Object.assign({}, result);
   var keys = Object.keys(result);
   var check = false;
@@ -137,11 +136,11 @@ app.post('/UpdateDB', async (req, res) => {
   }
   if (check == false) {
     check = false;
-    return res.redirect('html/forget.html?error = 1');
+    return res.redirect('html/forget.html?error=3');
   }
 })
 
-app.post('/AddSubject', async (req,res) =>{
+app.post('/AddSubject', async (req, res) => {
   let sql = "CREATE TABLE IF NOT EXITS SubjectInfo (Subj_Code INT(10) PRIMARY KEY, Subj_Name VARCHAR(300), User_Name VARCHAR(300))";
   let result = await queryDB(sql);
   result = Object.assign({}, result);

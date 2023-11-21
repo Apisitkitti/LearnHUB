@@ -6,7 +6,10 @@ function pageLoad(){
   if(urlParams.get("error")==1){
     document.getElementById('errordisplay').innerHTML = "Registration Error!"
   }
-  else{
+  if(urlParams.get("error")==2){
     document.getElementById('errordisplay').innerHTML = "Username or password incorrect"
+  }
+  if(urlParams.get("error")==3){
+    document.getElementById('errordisplay').innerHTML = "username not have in database"
   }
 }
