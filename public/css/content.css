@@ -1,13 +1,15 @@
-.first_block{
+.first_block,.second_block,.third_block,.fourth_block{
   display: grid;
   grid-template-columns: 100px auto auto 100px;
-  background-color: black; 
   position: relative;
   width: 100vw;
-  color: white;
   height: 450px;
   column-gap: 50px;
-  align-items: start;
+}
+.first_block{
+  background-color: black; 
+  color: white;
+  margin-top: 60px;
 
 }
 .text_block {
@@ -26,32 +28,22 @@
 .img_container{
   display: flex;
   justify-content: center;
+  margin: auto 0;
   grid-column: 3;
 }
 /* END FIRST BLOCK */
 
 .second_block{
-  display: grid;
-  grid-template-columns: 100px auto auto 100px;
-  position: relative;
-  width: 100vw;
-  height: 450px;
-  column-gap: 50px;
-  align-items: start;
-
+  background-color: white;
 }
 .img_container2{
   display: flex;
-  position: absolute;
   grid-column: 2;
   justify-content: center;
-  top: 50px;
-  
+  margin: auto 0;   
 }
 .text_block2{
-  position: absolute;
-  margin-top: 150px;
-  top: 50px;
+  margin: auto 0; 
   text-align: center;
   font-size: 2rem;
   grid-column: 3;
@@ -59,3 +51,65 @@
 #what_tag{
   color: #FF9000;
 }
+
+/* End Second Block */
+
+.third_block{
+  grid-template-columns: 150px auto auto auto 150px;
+  grid-template-rows: 50px auto;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+#header_thirdblock{
+  grid-row: 1;
+  grid-column: 2 / span 3;
+  margin-top: 20px;
+
+}
+.item_container2,.item_container3{
+  display: flex;
+  justify-content: center;
+  height: 185px;
+  width: 185px;
+}
+.item_container1,.item_container2,.item_container3{
+  display: flex;
+  margin: auto auto;
+  flex-direction: column; 
+}
+:is(.item_container1,.item_container2,.item_container3) img{
+  width: 185px;
+  height: 185px;
+}
+:is(.item_container1,.item_container2,.item_container3) p{
+ color: #FF9000;
+}
+.item_container1{
+  grid-column: 2;
+    & img{
+      margin-top: -40px;
+    }
+    & #first_text {
+      margin-top: 40px;
+    }
+}
+.item_container2{
+  grid-column: 3;
+}
+.item_container3{
+  grid-column: 4;
+}
+/* End third Block */
+
+#course_button{
+  background-color: #FF9000;
+  margin-top: 20px;
+  font-weight: bolder;
+  padding: 25px;
+  border-radius: 20px;
+  border: none;
+  font-size: 30px;
+}
+
