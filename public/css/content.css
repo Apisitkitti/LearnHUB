@@ -1,0 +1,31 @@
+article{
+  display: grid;
+  grid-template-columns: 10% 20% 20% 20% 20% 10%;
+}
+.first_block{
+  display: grid;
+  background-color: black;
+  margin-top: 60px;
+  position: fixed;
+  width: 100vw;
+  color: white;
+  height: 250px;
+  column-gap: 10px;
+  align-items: start;
+}
+.text_block {
+  display: grid;
+  margin-top: 100px;
+    & h1,p{
+      grid-column: 2 / span 2 ;
+     
+    }
+    
+}
+.img_container{
+  display: grid;
+    & img{
+      grid-column: 5 / span 2;
+    }
+  
+}
