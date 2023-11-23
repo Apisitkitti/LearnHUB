@@ -3,24 +3,28 @@
   flex-direction: column;
   height: 100%;
   width: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: #111;
   overflow-x: hidden;
+  z-index: 1;
   transition: 0.5s;
 
   & a {
     color: white;
     margin-bottom: 10px;
-    border: 1px solid white;
     padding: 5px;
     margin-left: 10px;
+  }
+
+  & a:not(:nth-child(1)):hover{
+    background-color: gray;
   }
 }
 
 #close_sidebar_button {
+  font-size: 20px;
   text-align: right;
   margin-right: 10px;
-  background-color: black;
 }
