@@ -3,4 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  scroll-behavior: smooth;
+}
+p,a,h1{
+  font-family: 'Oswald', sans-serif;
 }
