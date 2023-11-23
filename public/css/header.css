@@ -8,9 +8,10 @@
   top: 0;
   width: 100vw;
   box-shadow: 0px 0px 25px rgb(119, 119, 119);
-  & :visited{
-    color: black;
-  }
+  z-index: -1;
+    & :visited{
+      color: black;
+    }
 }
 
 #logo_box {

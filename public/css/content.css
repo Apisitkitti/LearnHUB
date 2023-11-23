@@ -1,31 +1,27 @@
-article{
-  display: grid;
-  grid-template-columns: 10% 20% 20% 20% 20% 10%;
-}
 .first_block{
   display: grid;
+  grid-template-columns: 100px auto auto 100px;
   background-color: black;
   margin-top: 60px;
   position: fixed;
   width: 100vw;
   color: white;
   height: 250px;
-  column-gap: 10px;
+  column-gap: 50px;
   align-items: start;
+  z-index: -1 ;
+  
 }
 .text_block {
-  display: grid;
-  margin-top: 100px;
-    & h1,p{
-      grid-column: 2 / span 2 ;
-     
-    }
+  grid-column: 2;
+  text-align: center;
+  margin-top: 70px;
     
 }
 .img_container{
-  display: grid;
-    & img{
-      grid-column: 5 / span 2;
-    }
-  
+  display: flex;
+  justify-content: center;
+  grid-column: 3;
 }
+/* END FIRST BLOCK */
+
