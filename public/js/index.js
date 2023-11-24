@@ -1,7 +1,13 @@
+
 function checkCookie() {
   var username = "";
   if (getCookie("username" == false)) {
-    window.location = "login.html";
+    window.location = "/html/login.html";
+  }
+  if(getCookie("username" == true)){
+    document.getElementById("register_button").style.display = "none";
+    document.getElementById("login_id").innerHTML = getCookie("username");
+    window.location = "/html/index.html"
   }
 }
 
@@ -17,5 +23,5 @@ function getCookie(name) {
 
 function pageLoad() {
   var username = getCookie('username')
-  document.getElementById('username').innerHTML = username
+  document.getElementById('login_id').innerHTML = username
 }

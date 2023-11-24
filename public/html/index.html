@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/css/content.css">
   <link rel="stylesheet" href="/css/footer.css">
   <script src="/js/function.js"></script>
+  <script src="/js/index.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -26,14 +27,15 @@
       <a href="index.html">LearnHUB</a>
     </div>
     <div class="nav_box">
-      <li><a href="#">All courses</a>
+      <li><a href="./course.html">All courses</a>
       <li><a href="#">My courses</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#foot">Contact</a></li>
     </div>
 
     <div class="register_login_container">
-      <a href="/html/login.html">Login</a>
+      <a href="/html/login.html" id="login_id">Login</a>
       <a href="/html/register.html" id="register_button">Register</a>
+      
     </div>
     <!-- Button trigger modal -->
     <div class="hamburger" onclick="openNav()">
@@ -98,17 +100,18 @@
         <div class="text_block">
           <h1 id="header_text">Start Learning <span id="what_tag">Now!<span></h1>
           <p id="sub_text">พร้อมเรียนยัง ไปลุยกันเลย</p>
-          <a href="#"><button id="course_button">SEE COURSES</button></a>
+          <a href="./course.html"><button id="course_button">SEE COURSES</button></a>
         </div>
         <div class="img_container">
           <img src="/img/check_list.png" alt="computer_image" height="400px">
 
         </div>
       </div>
-
+      <section id="foot">
       <footer>
         <h3>Contact us</h3>
       </footer>
+      </section>
     </div>
     </div>
   </main>
