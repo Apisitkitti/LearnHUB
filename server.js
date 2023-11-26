@@ -139,7 +139,10 @@ app.post('/UpdateDB', async (req, res) => {
     return res.redirect('html/forget.html?error=3');
   }
 })
-
+app.get('/logout',(req,res)=>{
+  res.clearCookie('username');
+  return res.redirect('html/index.html');
+})
 app.post('/AddSubject', async (req, res) => {
   let sql = "CREATE TABLE IF NOT EXITS SubjectInfo (Subj_Code INT(10) PRIMARY KEY, Subj_Name VARCHAR(300), User_Name VARCHAR(300))";
   let result = await queryDB(sql);

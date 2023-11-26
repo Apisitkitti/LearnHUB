@@ -4,12 +4,9 @@ function checkCookie() {
   if (getCookie("username" == false)) {
     window.location = "/html/login.html";
   }
-  if(getCookie("username" == true)){
-    document.getElementById("register_button").style.display = "none";
-    document.getElementById("login_id").innerHTML = getCookie("username");
-    window.location = "/html/index.html"
-  }
 }
+checkCookie();
+window.onload = pageLoad;
 
 function getCookie(name) {
   var value = "";
@@ -22,6 +19,13 @@ function getCookie(name) {
 }
 
 function pageLoad() {
-  var username = getCookie('username')
-  document.getElementById('login_id').innerHTML = username
+  var username = getCookie('username');
+  username_check(username);
+}
+
+function username_check(username){
+  if(getCookie("username" != false)){
+    document.getElementById("register_button").style.display = "none";
+    document.getElementById('login_id').innerHTML = username
+  }
 }
