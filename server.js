@@ -108,6 +108,7 @@ app.post('/CheckLogin', async (req, res) => {
       var check = true;
       res.cookie("username", result[keys[counter]].User_Username);
       res.cookie("password", result[keys[counter]].User_Password);
+      console.log(res.cookie("username", result[keys[counter]].User_Username));
       return res.redirect('html/index.html');
     }
   }
