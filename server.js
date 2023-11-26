@@ -108,7 +108,7 @@ app.post('/CheckLogin', async (req, res) => {
       var check = true;
       res.cookie("username", result[keys[counter]].username);
       res.cookie("password", result[keys[counter]].password);
-      console.log(res.cookie("username", result[keys[counter]].username));
+      console.log(result[keys[counter]].username);
       return res.redirect('html/index.html');
     }
   }
@@ -152,7 +152,7 @@ app.post('/AddSubject', async (req, res) => {
   var keys = Object.keys(result);
   var check = false;
 
-  sql = `INSERT INTO SubjectInfo (Subj_Code, User_Name) VALES ("${req.body.subjectcode}","${req.body.name}"})`;
+  sql = `INSERT INTO SubjectInfo (Subj_Code, User_Name) VALUES ("${req.body.subjectcode}","${req.body.name}"})`;
   result = await queryDB(sql);
 
   /*for(var SubjectNum = 0; SubjectNum < keys.length; SubjectNum++){
