@@ -1,0 +1,79 @@
+.english_Course, .japanese_Course, .arabic_Course {
+    display: grid;
+    grid-template-columns: 100px 42% auto 100px;
+}
+
+.course_Container {
+    background-color: black;
+    margin-top: 50px;
+    padding-top: 50px;
+}
+
+#title {
+    font-size: 2rem;
+    margin-top: 100px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+.img_box {
+    grid-column: 2;
+    text-align: right;
+    padding: 40px 0px;
+}
+
+.text_box {
+    text-align: left;
+    grid-column: 3;
+    font-size: 25px;
+    background-color: white;
+    margin: auto auto auto 0px;
+    padding: 21px 40px 21px 40px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.english_Course > .text_box {
+    padding-right: 82px;
+}
+
+.arabic_Course > .text_box {
+    padding-right: 102px;
+}
+
+img {
+    height: 300px;
+    background-color: #FF9000;
+    padding: 5px;
+    border-radius: 10px 0px 0px 10px;
+    margin: 4px 0px auto auto;
+}
+
+button {
+    font-size: 25px;
+    margin: 30px auto auto auto;
+    width: 250px;
+    height: 60px;
+    border: #FF9000;
+    border-radius: 20px;
+    background-color: #FF9000;
+    transition: 0.1s ease;
+    &:hover{
+      background-color:#fdb556;
+    }
+}
+
+#details_butt {
+    text-align: center;
+}
+
+.english_Course > .text_box > #details_butt {
+    padding-left: 46px;
+}
+
+.arabic_Course > .text_box > #details_butt {
+    padding-left: 70px;
+}
