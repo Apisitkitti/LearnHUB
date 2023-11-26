@@ -109,7 +109,7 @@ app.post('/CheckLogin', async (req, res) => {
       res.cookie("username", result[keys[counter]].username);
       res.cookie("password", result[keys[counter]].password);
       console.log(result[keys[counter]].username);
-      return res.redirect('html/index.html');
+      return res.redirect('html/index_after_login.html');
     }
   }
   if (check == false) {

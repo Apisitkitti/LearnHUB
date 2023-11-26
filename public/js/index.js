@@ -1,3 +1,5 @@
+
+
 function checkCookie() {
   var username = "";
   if (getCookie("username" == false)) {
@@ -22,10 +24,9 @@ function pageLoad() {
   username_check(username);
   
 }
+
 function username_check(username){
     var user_show = document.getElementById('username');
-    if(username != false){
-      user_show.innerHTML =  username  
-    }
-   
+      user_show.innerHTML = username;      
 }
+

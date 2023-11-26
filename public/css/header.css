@@ -72,7 +72,7 @@
 @media only screen and (max-width: 980px) {
 
   .nav_box,
-  .register_login_container {
+  .register_login_container,.profile {
     display: none;
   }
 
