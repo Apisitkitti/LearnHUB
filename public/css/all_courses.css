@@ -44,7 +44,7 @@ h2 {
     padding-right: 102px;
 }
 
-img {
+.img_box > img {
     height: 300px;
     background-color: #FF9000;
     padding: 5px;
