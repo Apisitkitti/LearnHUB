@@ -1,0 +1,12 @@
+.course_content{
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+}
+
+.ep_content video
+{
+ display: block;
+ padding-top: 100px;
+ grid-column: 2;
+ width: 100%;
+}
