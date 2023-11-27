@@ -5,7 +5,7 @@ body{
   background-color:#ff900f;
 }
 .video_content_container{
-  padding-top: 100px;
+  padding-top: 125px;
   background-color: black;
   border-radius: 0 0 150px 150px;
   height: 800px;
@@ -14,14 +14,14 @@ body{
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 20px 0px 0px 0px;
+  padding: 10px 0px 0px 0px;
   margin: 0px auto 0px auto;
   background-color: white;
-  height: 500px;  
-  width: 720px;
+  height: 600px;  
+  width: 840px;
   border-radius: 20px;
     & video{
-      width: 700px;
+      width: 820px;
       margin-left: 10px;
       position: absolutes;
       border-radius: 20px;
@@ -46,11 +46,17 @@ body{
   grid-column: 3;
   margin: auto auto;
   & #apply{
+    width: 300px;
+    height: 60px;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 500;
     padding: 5px;
     background-color: #ff900f;
-    
+    &:hover{
+      background-color:#fdb556;
+      cursor: pointer;
+    }
   }
 }
 .description_container{
@@ -71,4 +77,23 @@ body{
 }
 #highlight{
   color:#ff900f;
+}
+
+#chlink {
+  color: black;
+  text-decoration: underline;
+  transition: 0.1s ease;
+    &:hover{
+      color: #ff900f;
+    }
+}
+
+p {
+  font-size: 25px;
+}
+
+i {
+  margin-left: 10px;
+  margin-right: 5px;
+  vertical-align: 5px;
 }
