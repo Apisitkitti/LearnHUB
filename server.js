@@ -163,12 +163,6 @@ app.post('/AddSubject', async (req,res) => {
   result = await queryDB(sql);
 })
 
-app.post('/Calscore', async (req,res) => {
-  let sql = "CREATE TABLE IF NOT EXISTS Score (username VARCHAR(300), score INT(5), Subj_Code VARCHAR(30))"
-  let result = await queryDB(sql);
-  sql = `INSERT INTO Score VALUES ("${req.body.username}", "${req.body.score}", "${req.body.subjectcode})`;
-  result = await queryDB(sql);
-})
 
 app.listen(port, hostname, () => {
   console.log(`Server running at   http://${hostname}:${port}/html/index.html`);

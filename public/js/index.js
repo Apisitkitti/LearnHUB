@@ -48,21 +48,7 @@ async function AddSubject(subject)
   })
 }
 
-async function AddScore(subject)
-{
-  let response = await fetch("/Calscore",{
-    method:"POST",
-    headers:{
-      'Accept': 'application/json',
-     'Content-Type':'application/json'
-   },
-   body: JSON.stringify({
-    username : getCookie("username"),
-    //score : 
-    subjectcode : subject
-   })
-  })
-}
+
 
 function handleApplyArabic()
 {
