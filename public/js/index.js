@@ -1,4 +1,3 @@
-
 function checkCookie() {
   var username = "";
   if (getCookie("username" == false)) {
@@ -21,19 +20,17 @@ function getCookie(name) {
 function pageLoad() {
   var username = getCookie("username");
   username_check(username);
-  
 }
 
 function username_check(username){
     var user_show = document.getElementById('username');
-      user_show.innerHTML = username;      
+      user_show.innerHTML = username;
 }
 
 async function ReadSubject()
 {
   let read = await fetch("/ReadSubject");
   let subject = await read.json;
-  AddSubject(subject);
 }
 
 async function AddSubject(subject)
@@ -65,3 +62,5 @@ function handleApplyEng()
 {
   AddSubject("eng");
 }
+
+

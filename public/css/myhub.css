@@ -1,11 +1,35 @@
 .head{
   background-color: black;
   width: 100vw;
-  position: fixed;
   margin-top: 60px;
   font-size: 2rem;
   color: white;
   text-align: center;
   padding: 15px 0px;
   font-weight: bold;
+}
+.all-wrap{
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.course_layer{
+  margin-top: 100px;
+  background-color: black;
+  border: 3px solid #FF9000;
+  border-radius: 15px;
+  width: 500px;
+  height: 470px;
+  margin: 0px auto;
+  text-align: center;
+
+    & img{
+    width: 475px;
+    margin: 10px;
+    }
+}
+.text_container{
+  border-radius: 0 0 10px 10px;
+  background-color: white;
+  padding: 10px 10px 24.5px 10px;
 }

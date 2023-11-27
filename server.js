@@ -149,7 +149,7 @@ app.get('/logout',(req,res)=>{
 app.get('/ReadSubject', async (req,res) => {
   let sql = "CREATE TABLE IF NOT EXISTS SubjectInfo (Subj_Code VARCHAR(30), username VARCHAR(300))";
   let result = await queryDB(sql);
-  sql = `SELECT * FROM SubjectInfo`;
+  sql = `SELECT Subj_Code FROM SubjectInfo`;
     result = await queryDB(sql);
     result = Object.assign({}, result);
     res.json(result);
