@@ -155,12 +155,18 @@ app.get('/ReadSubject', async (req,res) => {
     res.json(result);
 })
 
-var checkAddSubject = false;
 
 app.post('/AddSubject', async (req,res) => {
   let sql = "CREATE TABLE IF NOT EXISTS SubjectInfo (Subj_Code VARCHAR(30), username VARCHAR(300))";
   let result = await queryDB(sql);
   sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${req.body.username}")`;
+  result = await queryDB(sql);
+})
+
+app.post('/Calscore', async (req,res) => {
+  let sql = "CREATE TABLE IF NOT EXISTS Score (username VARCHAR(300), score INT(5), Subj_Code VARCHAR(30))"
+  let result = await queryDB(sql);
+  sql = `INSERT INTO Score VALUES ("${req.body.username}", "${req.body.score}", "${req.body.subjectcode})`;
   result = await queryDB(sql);
 })
 
