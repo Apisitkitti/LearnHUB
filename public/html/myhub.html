@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/css/content.css">
   <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/myhub.css">
+  <link rel="stylesheet" href="/css/after_login.css">
   <script src="/js/function.js"></script>
   <script src="/js/index.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,18 +26,19 @@
 
   <div class="header_container">
     <div id="logo_box">
-      <a href="index.html">LearnHUB</a>
+      <a href="index_after_login.html">LearnHUB</a>
     </div>
     <div class="nav_box">
-      <li><a href="./course.html">All courses</a>
-      <li><a href="./login.html">My courses</a></li>
+      <li><a href="./course_after_login.html">All courses</a>
+      <li><a href="./myhub.html">My courses</a></li>
       <li><a href="#foot">Contact</a></li>
     </div>
 
-    <div class="register_login_container">
-      <a href="/html/login.html" id="login_id">Login</a>
-      <a href="/html/register.html" id="register_button">Register</a>
+    <div class="profile">
+      <p id="username"></p>
+      <a id="logout_button" href="./index.html">Logout</a>
     </div>
+    
       <!-- Button trigger modal -->
     <div class="hamburger" onclick="openNav()">
       <i class="bi bi-list"></i>
@@ -46,12 +48,10 @@
   <aside>
     <div class="side_container" id="sidebar">
       <a href="" id="close_sidebar_button" onclick="closeSidebar()">x</a>
-      <a href="/html/course.html">All Courses</a>
-      <a href="#">My Courses</a>
+      <a href="/html/course_after_login.html">All Courses</a>
+      <a href="./myhub.html">My Courses</a>
       <a href="#">Contact</a>
-      <a href="/html/login.html">Login</a>
-     
-      <a href="/html/register.html">Register</a>
+      <a href="./index.html">Logout</a>
     </div>
   </aside>
 
