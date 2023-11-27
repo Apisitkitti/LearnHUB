@@ -140,38 +140,63 @@ app.post('/UpdateDB', async (req, res) => {
     return res.redirect('html/forget.html?error=3');
   }
 })
+
 app.get('/logout',(req,res)=>{
   res.clearCookie('username');
   return res.redirect('html/index.html');
 })
 
-app.post('/AddSubject', async (req, res) => {
-  let sql = "CREATE TABLE IF NOT EXISTS SubjectInfo (Subj_Code VARCHAR(30) PRIMARY KEY, username VARCHAR(300))";
+app.get('/ReadSubject', async (req,res) => {
+  let sql = "CREATE TABLE IF NOT EXISTS SubjectInfo (Subj_Code VARCHAR(30), username VARCHAR(300))";
   let result = await queryDB(sql);
-  result = Object.assign({}, result);
-  // var keys = Object.keys(result);
-  // var check = false;
-  sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${cookie.username}"})`;
-  result = await queryDB(sql);
-  console.log(result);
-
-  /*for(var SubjectNum = 0; SubjectNum < keys.length; SubjectNum++){
-    if(req.body.subjectcode != result[keys[SubjectNum]].subjectcode)     //ตอนนี้ไม่เเน่ใจว่า จะใช้ check ยังไง
-    {
-      let sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALES ("${req.body.subjectcode}","${req.body.name}"})`;
-      let result = await queryDB(sql);
-      check = true;
-
-    }
-
-  }*/
-  // if(check == false)
-  // {
-  //   check = false;
-  //   return res.redirect("...");
-  // }
+  sql = `SELECT * FROM SubjectInfo`;
+    result = await queryDB(sql);
+    result = Object.assign({}, result);
+    res.json(result);
 })
 
+var checkAddSubject = false;
+
+app.post('/AddSubject', async (req,res) => {
+  let sql = "CREATE TABLE IF NOT EXISTS SubjectInfo (Subj_Code VARCHAR(30), username VARCHAR(300))";
+  let result = await queryDB(sql);
+  sql = `SELECT Subj_Code, username FROM SubjectInfo`;
+  result = await queryDB(sql);
+  result = Object.assign({}, result);
+  var keys = Object.keys(result);
+  var check = false;
+
+ // if(checkAddSubject == false)
+  //{
+    sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${req.body.username}")`;
+    result = await queryDB(sql);
+    check = true;
+    checkAddSubject = true;
+    res.redirect('html/index.html');
+  //}
+
+//   if(checkAddSubject == true)
+//   {
+//     for(var subject_num = 0; subject_num < keys.length; subject_num++)
+//     {
+//       if(req.body.username == result[keys[subject_num]].username && req.body.subjectcode !== result[keys[subject_num]].subjectcode)
+//       {
+//         sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${req.body.username}")`;
+//         result = await queryDB(sql);
+//         check = true;
+//         res.redirect('html/index.html');
+//       }
+//     }
+//   }
+
+//   if (check == false) {
+//     check = false;
+//     console.log("Error");
+  
+//     return res.redirect('html/forget.html?error=3');
+//   }
+  
+})
 
 app.listen(port, hostname, () => {
   console.log(`Server running at   http://${hostname}:${port}/html/index.html`);
