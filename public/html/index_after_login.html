@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>LearningHUB</title>
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/setup.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/css/sidebar.css">
+  <link rel="stylesheet" href="/css/content.css">
+  <link rel="stylesheet" href="/css/after_login.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <script src="/js/function.js"></script>
+  <script src="/js/index.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Oswald:wght@200;300;400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head> 
+
+<body>
+
+  <div class="header_container">
+    <div id="logo_box">
+      <a href="index_after_login.html">LearnHUB</a>
+    </div>
+    <div class="nav_box">
+      <li><a href="./course.html">All courses</a>
+      <li><a href="#">My courses</a></li>
+      <li><a href="#foot">Contact</a></li>
+    </div>
+    <div class="profile">
+      <p id="username"></p>
+      <a id="logout_button" href="./index.html">Logout</a>
+    </div>
+    <!-- Button trigger modal -->
+    <div class="hamburger" onclick="openNav()">
+      <i class="bi bi-list"></i>
+    </div>
+  </div>
+  <!-- End HEADER -->
+  <aside>
+    <div class="side_container" id="sidebar">
+      <a href="" id="close_sidebar_button" onclick="closeSidebar()">x</a>
+      <a href="/html/course.html">All Courses</a>
+      <a href="#">My Courses</a>
+      <a href="#">Contact</a>
+      <a href="./index.html">Logout</a>
+    </div>
+  </aside>
+
+  <main>
+    <div class="home_container">
+      <div class="first_block">
+        <div class="text_block">
+          <h1 id="header_text"> Welcome to Learn<span id="iconic">HUB<span></h1>
+          <p id="sub_text"> คำขวัญประจำเว็บ</p>
+        </div>
+        <div class="img_container">
+          <img src="/img/computer.png" alt="computer_image" height="400px">
+        </div>
+      </div>
+
+      <div class="second_block">
+        <div class="img_container2">
+          <img src="/img/question.png" alt="questionmarks" height="300px">
+        </div>
+
+        <div class="text_block2">
+          <h2> <span id="what_tag">What</span> is LearnHUB</h2>
+          <p id="sub_text">LearnHUB คือ อะไรก็ว่าไป เดี๋ยวค่อยคิด</p>
+        </div>
+      </div>
+
+
+      <div class="third_block">
+        <h2 id="header_thirdblock"><span id="what_tag">Why</span> LearnHUB?</h2>
+        <div class="item_container1">
+          <img src="/img/hand.png" alt="pic">
+          <p id="first_text">Reason 1</p>
+          <p>xxxxxxxxx</p>
+        </div>
+        <div class="item_container2">
+          <img src="/img/graph.png" alt="pic">
+          <p>Reason 2</p>
+          <p>xxxxxxxxx</p>
+        </div>
+        <div class="item_container3">
+          <img src="/img/money.png " alt="pic">
+          <p>Reason 3</p>
+          <p>xxxxxxxxx</p>
+        </div>
+      </div>
+
+      <div class="fourth_block">
+        <div class="text_block">
+          <h1 id="header_text">Start Learning <span id="what_tag">Now!<span></h1>
+          <p id="sub_text">พร้อมเรียนยัง ไปลุยกันเลย</p>
+          <a href="./course.html"><button id="course_button">SEE COURSES</button></a>
+        </div>
+        <div class="img_container">
+          <img src="/img/check_list.png" alt="computer_image" height="400px">
+
+        </div>
+      </div>
+      <section id="foot">
+      <footer>
+        <h3>Contact us</h3>
+      </footer>
+      </section>
+    </div>
+    </div>
+  </main>
+
+
+</body>
+
+</html>

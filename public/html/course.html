@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/css/sidebar.css">
   <link rel="stylesheet" href="/css/content.css">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/all_courses.css">
   <script src="/js/function.js"></script>
   <script src="/js/index.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +46,7 @@
   <aside>
     <div class="side_container" id="sidebar">
       <a href="" id="close_sidebar_button" onclick="closeSidebar()">x</a>
+      <a href="/html/course.html">All Courses</a>
       <a href="#">My courses</a>
       <a href="#">Contact</a>
       <a href="/html/login.html">Login</a>
@@ -52,11 +54,69 @@
     </div>
   </aside>
 
+  <main>
+    <div id="title">
+      <h1> Courses<span id="iconic">HUB</span></h1>
+    </div>
+
+    <div class="course_Container">
+      
+      <div class="english_Course">
+        <div class="img_box">
+          <img src="/img/english.jpg" alt="english_course_img">
+        </div>
+        <div class="text_box">
+          <h2>Easy <span id="what_tag">English</span> Alphabet</h2>
+          <ul>
+            <li> คอร์สเรียนตัวอักษรภาษา<span id="what_tag">อังกฤษ</span> จำนวน 26 ตัว </li>
+            <li> Level: <span id="what_tag">Beginner</span> </li>
+          </ul>
+          <div id="details_butt">
+            <a href="/html/eng_course_rgs.html"><button id="eng_course_butt">Click Here for Details</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="japanese_Course">
+        <div class="img_box">
+          <img src="/img/hiragana.jpg" alt="japanese_course_img">
+        </div>
+        <div class="text_box">
+          <h2>Easy <span id="what_tag">Japanese</span> Alphabet</h2>
+          <ul>
+            <li> คอร์สเรียนตัวอักษรภาษญี่ปุ่น<span id="what_tag">ฮิรากานะ</span> จำนวน 46 ตัว </li>
+            <li> Level: <span id="what_tag">Beginner</span> </li>
+          </ul>
+          <div id="details_butt">
+            <a href="#"><button id="_course_butt">Click Here for Details</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="arabic_Course">
+        <div class="img_box">
+          <img src="/img/arabic.jpg" alt="arabic_course_img">
+        </div>
+        <div class="text_box">
+          <h2>Easy <span id="what_tag">Arabic</span> Alphabet</h2>
+          <ul>
+            <li> คอร์สเรียนตัวอักษรภาษา<span id="what_tag">อาราบิก</span> จำนวน 28 ตัว </li>
+            <li> Level: <span id="what_tag">Beginner</span> </li>
+          </ul>
+          <div id="details_butt">
+            <a href="#"><button id="ara_course_butt">Click Here for Details</button></a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
   <section id="foot">
     <footer>
       <h3>Contact us</h3>
     </footer>
-    </section>
+  </section>
 </body>
 
 </html>

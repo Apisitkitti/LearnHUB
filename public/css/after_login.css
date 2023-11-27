@@ -1,0 +1,27 @@
+a{
+  color: black;
+}
+.profile{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-right: 2rem;
+}
+#username{
+  display: flex;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+  padding: 0 5px;
+  margin-right: 10px;
+  cursor:default; 
+}
+
+@media only screen and (max-width: 980px) {
+
+  .nav_box,.register_login_container,.profile {
+    display: none;
+  }
+}
