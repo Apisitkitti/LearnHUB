@@ -1,5 +1,4 @@
 
-
 function checkCookie() {
   var username = "";
   if (getCookie("username" == false)) {
@@ -30,3 +29,39 @@ function username_check(username){
       user_show.innerHTML = username;      
 }
 
+async function ReadSubject()
+{
+  let read = await fetch("/ReadSubject");
+  let subject = await read.json;
+  AddSubject(subject);
+}
+
+async function AddSubject(subject)
+{
+  let response = await fetch("/AddSubject",{
+    method:"POST",
+    headers:{
+      'Accept': 'application/json',
+     'Content-Type':'application/json'
+   },
+   body: JSON.stringify({
+    username : getCookie("username"),
+    subjectcode : subject
+   })
+  })
+}
+
+function handleApplyArabic()
+{
+  AddSubject("arabic");
+}
+
+function handleApplyJapan()
+{
+  AddSubject("japan");
+}
+
+function handleApplyEng()
+{
+  AddSubject("eng");
+}
