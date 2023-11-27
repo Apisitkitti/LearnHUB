@@ -1,15 +1,17 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="UTF-8">
   <title>LearningHUB</title>
-  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="/css/setup.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="/css/sidebar.css">
   <link rel="stylesheet" href="/css/content.css">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="../css/card.css">
+  <link rel="stylesheet" href="../css/course.css">
   <script src="/js/function.js"></script>
   <script src="/js/index.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +37,7 @@
     <div class="register_login_container">
       <a href="/html/login.html" id="login_id">Login</a>
       <a href="/html/register.html" id="register_button">Register</a>
-      
+
     </div>
     <!-- Button trigger modal -->
     <div class="hamburger" onclick="openNav()">
@@ -55,9 +57,57 @@
   </aside>
 
   <main>
+    <div class="video_content_container">
+      <div class="card_container">
+        <div class="learning_pic">
+          <video width="650px" controls id="video_size">
+            <source src="../vdo/eng/A.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video_description">
+          <div class="description_for_video">
+            <p>Easy <span id="highlight">Arabic</span> Alphabet</p>
+            <p>Level:<span id="highlight">Beginner</span>
+               <i class="bi bi-alarm"></i><span id="highlight">Duration</span>
+              : 01:10:12
+            </p>
+          </div>
+          <div class="apply_button">
+            <a href="#"><button id="apply">APPLY FOR COURSES</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="description_container">
+      <div class="description">
+        <h2>What will you  <span id="highlight">learn?</span></h2>
+          <ul>
+            <li>เรียนรู้ตัวอักษรภาษาอังกฤษพื้นฐาน จำนวน 26 ตัว</li>
+            <li>เรียนรู้การออกเสียงของตัวอักษรแต่ละตัวอย่างถูกต้อง</li>
+            <li>ยกตัวอย่างคำที่ใช้ตัวอักษรต่างๆ ประการเรียนรู้ เพื่อให้เข้าใจตัวอักษรมากขึ้น</li>
+          </ul>
+        </div>
+
+        <div class="description">
+          <h2>What will you  <span id="highlight">get?</span></h2>
+            <ul>
+              <li>ความรู้พื้นฐานของตัวอักษรภาษาอังกฤษพื้นฐาน จำนวน 26 ตัว</li>
+              <li>ความรู้คำศัพท์พื้นฐานที่ใช้ตัวอักษรในการสร้างขึ้น</li>
+              <li>ได้ฟังเพลง ว้าวสนุกจัง</li>
+            </ul>
+        </div>
+
+        <div class="description">
+          <h2>What will you  <span id="highlight">teach you?</span></h2>
+            <ul>
+              <li>YouTube Channel: 123abctv</li>
+            </ul>
+      </div>
+    </div>
     
   </main>
-  
+
   <section id="foot">
     <footer>
       <h3>Contact us</h3>
