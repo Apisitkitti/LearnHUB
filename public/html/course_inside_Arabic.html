@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>LearningHUB</title>
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="/css/setup.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/css/sidebar.css">
+  <link rel="stylesheet" href="/css/content.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="../css/card.css">
+  <link rel="stylesheet" href="../css/course.css">
+  <link rel="stylesheet" href="../css/course_video.css">
+  <script src="/js/function.js"></script>
+  <script src="/js/index.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Oswald:wght@200;300;400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <div class="header_container">
+    <div id="logo_box">
+      <a href="index.html">LearnHUB</a>
+    </div>
+    <div class="nav_box">
+      <li><a href="./course.html">All courses</a>
+      <li><a href="login.html">My courses</a></li>
+      <li><a href="#foot">Contact</a></li>
+    </div>
+
+    <div class="register_login_container">
+      <a href="/html/login.html" id="login_id">Login</a>
+      <a href="/html/register.html" id="register_button">Register</a>
+
+    </div>
+    <!-- Button trigger modal -->
+    <div class="hamburger" onclick="openNav()">
+      <i class="bi bi-list"></i>
+    </div>
+  </div>
+  <!-- End HEADER -->
+  <aside>
+    <div class="side_container" id="sidebar">
+      <a href="" id="close_sidebar_button" onclick="closeSidebar()">x</a>
+      <a href="/html/course.html">All Courses</a>
+      <a href="login.html">My Courses</a>
+      <a href="#">Contact</a>
+      <a href="/html/login.html">Login</a>
+      <a href="/html/register.html">Register</a>
+    </div>
+  </aside>
+  
+  <main class="course_outline">
+    <div class="course_content">
+      <h2></h2>
+      <div class="ep_content">
+       <video src="../vdo/ara/1_alef_and_nun.mp4" controls></video>
+       <video src="../vdo/ara/2_ba_ta_and_tha.mp4"controls></video>
+       <video src="../vdo/ara/3_jim_ha_and_kha.mp4"controls></video>
+       <video src="../vdo/ara/4_dal_and_dhal.mp4"controls></video>
+       <video src="../vdo/ara/5_ra_and_zayn.mp4"controls></video>
+       <video src="../vdo/ara/6_sin_and_shin.mp4"controls></video>
+       <video src="../vdo/ara/7_review.mp4"controls></video>
+      </div>
+    </div>
+  </main>
+  <section id="foot">
+    <footer>
+      <h3>Contact us</h3>
+      <div class="contact_logo">
+        <a href="https://www.youtube.com/watch?v=fTczCpIaLAU">
+          <img src="/img/ig.png" alt="ig_log" height="40px">
+        </a>
+        <a href="https://www.youtube.com/watch?v=fTczCpIaLAU">
+          <img src="/img/fb.png" alt="fb_log" height="40px">
+        </a>
+        <a href="https://www.youtube.com/watch?v=fTczCpIaLAU">
+          <img src="/img/x.png" alt="x_log" height="40px">
+        </a>
+      </div>
+      <div id="watermark">
+        <p>LearnHUB, 2023</p>
+      </div>
+    </footer>
+    </section>
+</body>
+
+</html>
