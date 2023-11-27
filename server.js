@@ -160,42 +160,8 @@ var checkAddSubject = false;
 app.post('/AddSubject', async (req,res) => {
   let sql = "CREATE TABLE IF NOT EXISTS SubjectInfo (Subj_Code VARCHAR(30), username VARCHAR(300))";
   let result = await queryDB(sql);
-  sql = `SELECT Subj_Code, username FROM SubjectInfo`;
+  sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${req.body.username}")`;
   result = await queryDB(sql);
-  result = Object.assign({}, result);
-  var keys = Object.keys(result);
-  var check = false;
-
- if(checkAddSubject == false)
-  {
-    sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${req.body.username}")`;
-    result = await queryDB(sql);
-    check = true;
-    checkAddSubject = true;
-    res.redirect('html/index.html');
-  }
-
-  if(checkAddSubject == true)
-  {
-    for(var subject_num = 0; subject_num < keys.length; subject_num++)
-    {
-      if(req.body.username == result[keys[subject_num]].username && req.body.subjectcode !== result[keys[subject_num]].Subj_Code)
-      {
-        sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${req.body.username}")`;
-        result = await queryDB(sql);
-        check = true;
-        res.redirect('html/index.html');
-      }
-    }
-  }
-
-  if (check == false) {
-    check = false;
-    console.log("Error");
-  
-    return res.redirect('html/forget.html?error=3');
-  }
-  
 })
 
 app.listen(port, hostname, () => {
