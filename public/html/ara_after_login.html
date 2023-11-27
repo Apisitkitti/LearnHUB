@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="../css/card.css">
   <link rel="stylesheet" href="../css/course.css">
+  <link rel="stylesheet" href="/css/after_login.css">
   <script src="/js/function.js"></script>
   <script src="/js/index.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,16 +30,16 @@
       <a href="index.html">LearnHUB</a>
     </div>
     <div class="nav_box">
-      <li><a href="./course.html">All courses</a>
+      <li><a href="./course_after_login.html">All courses</a>
       <li><a href="#">My courses</a></li>
       <li><a href="#foot">Contact</a></li>
     </div>
 
-    <div class="register_login_container">
-      <a href="/html/login.html" id="login_id">Login</a>
-      <a href="/html/register.html" id="register_button">Register</a>
-
+    <div class="profile">
+      <p id="username"></p>
+      <a id="logout_button" href="./index.html">Logout</a>
     </div>
+
     <!-- Button trigger modal -->
     <div class="hamburger" onclick="openNav()">
       <i class="bi bi-list"></i>
@@ -48,11 +49,10 @@
   <aside>
     <div class="side_container" id="sidebar">
       <a href="" id="close_sidebar_button" onclick="closeSidebar()">x</a>
-      <a href="/html/course.html">All Courses</a>
+      <a href="/html/course_after_login.html">All Courses</a>
       <a href="#">My Courses</a>
       <a href="#">Contact</a>
-      <a href="/html/login.html">Login</a>
-      <a href="/html/register.html">Register</a>
+      <a href="./index.html">Logout</a>
     </div>
   </aside>
 
@@ -61,19 +61,19 @@
       <div class="card_container">
         <div class="learning_pic">
           <video width="650px" controls id="video_size">
-            <source src="../vdo/jpn/1_a.mp4" type="video/mp4">
+            <source src="../vdo/ara/1_alef_and_nun.mp4" type="video/mp4">
           </video>
         </div>
         <div class="video_description">
           <div class="description_for_video">
-            <p>Easy <span id= "highlight">Japanese</span> Alphabet</p>
+            <p>Easy <span id= "highlight">Arabic</span> Alphabet</p>
             <p>Level: <span id="highlight">Beginner</span>
                <i class="bi bi-alarm"></i><span id="highlight">Duration</span>
-              : 00:54:26
+              : 00:43:35
             </p>
           </div>
           <div class="apply_button">
-            <a href="login.html"><button id="apply">APPLY FOR COURSE</button></a>
+            <a href=""><button id="apply">APPLY FOR COURSE</button></a>
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@
       <div class="description">
         <h2>What will you  <span id="highlight">learn?</span></h2>
           <ul>
-            <li>เรียนรู้ตัวอักษรภาษาญี่ปุ่นพื้นฐาน จำนวน 46 ตัว</li>
+            <li>เรียนรู้ตัวอักษรภาษาอาราบิกพื้นฐาน จำนวน 28  ตัว</li>
             <li>เรียนรู้การออกเสียงและการเขียนของตัวอักษรแต่ละตัวอย่างถูกต้อง</li>
             <li>ยกตัวอย่างคำที่ใช้ตัวอักษรต่างๆ ประกอบการเรียนรู้ เพื่อให้เข้าใจตัวอักษรมากขึ้น</li>
           </ul>
@@ -92,7 +92,7 @@
         <div class="description">
           <h2>What will you  <span id="highlight">get?</span></h2>
             <ul>
-              <li>ความรู้พื้นฐานของตัวอักษรภาษาญี่ปุ่นพื้นฐาน จำนวน 46 ตัว</li>
+              <li>ความรู้พื้นฐานของตัวอักษรภาษาอาราบิกพื้นฐาน จำนวน 28  ตัว</li>
               <li>ความรู้คำศัพท์พื้นฐานที่ใช้ตัวอักษรในการสร้างขึ้น</li>
               <li>รู้หลักการออกเสียงและการเขียนของตัวอักษรนั้นๆ</li>
             </ul>
@@ -101,7 +101,7 @@
         <div class="description">
           <h2>Who will <span id="highlight">teach you?</span></h2>
             <ul>
-              <li>YouTube Channel: <a href="https://www.youtube.com/@TOMOsensei" id="chlink">TOMO sensei</a></li>
+              <li>YouTube Channel: <a href="https://www.youtube.com/@ArabicPod101" id="chlink">Learn Arabic with ArabicPod101.com</a></li>
             </ul>
       </div>
     </div>
