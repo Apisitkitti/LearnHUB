@@ -165,37 +165,21 @@ app.post('/AddSubject', async (req,res) => {
   result = Object.assign({}, result);
   var keys = Object.keys(result);
   var check = false;
-
- // if(checkAddSubject == false)
-  //{
-    sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${req.body.username}")`;
-    result = await queryDB(sql);
-    check = true;
-    checkAddSubject = true;
-    res.redirect('html/index.html');
-  //}
-
-//   if(checkAddSubject == true)
-//   {
-//     for(var subject_num = 0; subject_num < keys.length; subject_num++)
-//     {
-//       if(req.body.username == result[keys[subject_num]].username && req.body.subjectcode !== result[keys[subject_num]].subjectcode)
-//       {
-//         sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${req.body.username}")`;
-//         result = await queryDB(sql);
-//         check = true;
-//         res.redirect('html/index.html');
-//       }
-//     }
-//   }
-
-//   if (check == false) {
-//     check = false;
-//     console.log("Error");
-  
-//     return res.redirect('html/forget.html?error=3');
-//   }
-  
+  for(var subject_count = 0; subject_count<keys.length; subject_count++){
+    if(req.body.subjectcode != result[keys[subject_count]].Subj_Code && req.body.username == result[keys[subject_count]].username){
+      sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${req.body.username}")`;
+      result = await queryDB(sql);
+      check = true;
+      checkAddSubject = true;
+      res.redirect('html/index.html');
+    }
+  }
+  if (check == false) {
+        check = false;
+        console.log("Error");
+      
+        return res.redirect('html/jpn_course_rgs.html?error=3');
+      }
 })
 
 app.listen(port, hostname, () => {
