@@ -24,6 +24,7 @@
   background-color: #FF9000;
   border-radius: 10px;
   padding: 0 3px;
+  margin-left: 3px;
 }
 .img_container{
   display: flex;

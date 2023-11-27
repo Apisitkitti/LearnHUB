@@ -5,13 +5,13 @@
 
 .course_Container {
     background-color: black;
-    margin-top: 50px;
     padding-top: 50px;
 }
 
 #title {
+    color: white;
     font-size: 2rem;
-    margin-top: 100px;
+    margin-top: 120px;
     text-align: center;
 }
 
@@ -77,4 +77,8 @@ button {
 
 .arabic_Course > .text_box > #details_butt {
     padding-left: 70px;
+}
+
+body {
+    background-color: black;
 }
