@@ -53,16 +53,19 @@ async function AddSubject(subject)
 function handleApplyArabic()
 {
   AddSubject("arabic");
+  alert("Apply Successful");
 }
 
 function handleApplyJapan()
 {
   AddSubject("japan");
+  alert("Apply Successful");
 }
 
 function handleApplyEng()
 {
   AddSubject("eng");
+  alert("Apply Successful");
 }
 
 
