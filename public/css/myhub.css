@@ -1,0 +1,11 @@
+.head{
+  background-color: black;
+  width: 100vw;
+  position: fixed;
+  margin-top: 60px;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  padding: 15px 0px;
+  font-weight: bold;
+}

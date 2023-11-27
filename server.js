@@ -151,7 +151,7 @@ app.post('/AddSubject', async (req, res) => {
   result = Object.assign({}, result);
   // var keys = Object.keys(result);
   // var check = false;
-  sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${cookie.username}"})`;
+  sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${cookies("username")}"})`;
   result = await queryDB(sql);
   console.log(result);
 
