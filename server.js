@@ -146,19 +146,19 @@ app.get('/logout',(req,res)=>{
 })
 
 app.post('/AddSubject', async (req, res) => {
-  let sql = "CREATE TABLE IF NOT EXITS SubjectInfo (Subj_Code INT(10) PRIMARY KEY, Subj_Name VARCHAR(300), User_Name VARCHAR(300))";
+  let sql = "CREATE TABLE IF NOT EXISTS SubjectInfo (Subj_Code VARCHAR(30) PRIMARY KEY, username VARCHAR(300))";
   let result = await queryDB(sql);
   result = Object.assign({}, result);
-  var keys = Object.keys(result);
-  var check = false;
-
-  sql = `INSERT INTO SubjectInfo (Subj_Code, User_Name) VALUES ("${req.body.subjectcode}","${req.body.name}"})`;
+  // var keys = Object.keys(result);
+  // var check = false;
+  sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALUES ("${req.body.subjectcode}","${cookie.username}"})`;
   result = await queryDB(sql);
+  console.log(result);
 
   /*for(var SubjectNum = 0; SubjectNum < keys.length; SubjectNum++){
     if(req.body.subjectcode != result[keys[SubjectNum]].subjectcode)     //ตอนนี้ไม่เเน่ใจว่า จะใช้ check ยังไง
     {
-      let sql = `INSERT INTO SubjectInfo (Subj_Code, User_Name) VALES ("${req.body.subjectcode}","${req.body.name}"})`;
+      let sql = `INSERT INTO SubjectInfo (Subj_Code, username) VALES ("${req.body.subjectcode}","${req.body.name}"})`;
       let result = await queryDB(sql);
       check = true;
 
