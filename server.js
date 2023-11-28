@@ -149,12 +149,16 @@ app.get('/logout',(req,res)=>{
 app.get('/ReadSubject', async (req,res) => {
   let sql = "CREATE TABLE IF NOT EXISTS SubjectInfo (Subj_Code VARCHAR(30), username VARCHAR(300))";
   let result = await queryDB(sql);
-  sql = `SELECT Subj_Code FROM SubjectInfo`;
+  sql = `SELECT DISTINCT(Subj_Code) FROM SubjectInfo WHERE username = '${req.cookies.username}'`;
     result = await queryDB(sql);
     result = Object.assign({}, result);
+    console.log("readSubjecttest");
+    console.log(req.cookies.username);
+    console.log(result);
     res.json(result);
 })
 
+var checkAddSubject = false;
 
 app.post('/AddSubject', async (req,res) => {
   let sql = "CREATE TABLE IF NOT EXISTS SubjectInfo (Subj_Code VARCHAR(30), username VARCHAR(300))";

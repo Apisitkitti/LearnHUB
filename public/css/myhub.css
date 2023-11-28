@@ -1,4 +1,4 @@
-.head{
+.head {
   background-color: black;
   width: 100vw;
   margin-top: 60px;
@@ -8,28 +8,52 @@
   padding: 15px 0px;
   font-weight: bold;
 }
-.all-wrap{
+
+.all-wrap {
   margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
 }
-.course_layer{
+
+.course_layer {
+  font-family: 'Oswald', sans-serif;
   margin-top: 100px;
   background-color: black;
   border: 3px solid #FF9000;
   border-radius: 15px;
   width: 500px;
-  height: 470px;
+  height: 600px;
   margin: 0px auto;
   text-align: center;
 
-    & img{
-    width: 475px;
-    margin: 10px;
-    }
 }
-.text_container{
+
+.image_inside {
+  width: 475px;
+  margin: 10px;
+}
+
+.text_container {
+  font-family: 'Oswald', sans-serif;
   border-radius: 0 0 10px 10px;
   background-color: white;
   padding: 10px 10px 24.5px 10px;
+  height: 305px;
+}
+
+.link {
+  display: block;
+  background-color: #FF9000;
+  margin-top: 20px;
+  font-weight: bolder;
+  padding: 20px 40px;
+  border-radius: 30px;
+  border: none;
+  font-size: 30px;
+  transition: 0.1s ease;
+
+  &:hover {
+    background-color: #fdb556;
+    cursor: pointer;
+  }
 }
